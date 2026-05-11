@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #05050f;
+    color: #e8e8f0;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #ff2d78, #9b30ff, #2d78ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-pink {
+    background: linear-gradient(90deg, #ff2d78, #ff6fa3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-border {
+    border: 1px solid rgba(155, 48, 255, 0.25);
+    background: rgba(15, 15, 36, 0.8);
+    backdrop-filter: blur(12px);
+  }
+  .card-border-pink {
+    border: 1px solid rgba(255, 45, 120, 0.35);
+    background: rgba(15, 15, 36, 0.9);
+  }
+  .glow-border {
+    position: relative;
+    border: 1px solid rgba(155,48,255,0.3);
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #ff2d78, #9b30ff);
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 25px rgba(255,45,120,0.5), 0 0 50px rgba(155,48,255,0.3);
+    transform: translateY(-1px);
+  }
+  .btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    transition: all 0.3s ease;
+  }
+  .btn-whatsapp:hover {
+    box-shadow: 0 0 25px rgba(37,211,102,0.5);
+    transform: translateY(-1px);
+  }
+  .section-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ff2d78;
+  }
+}
