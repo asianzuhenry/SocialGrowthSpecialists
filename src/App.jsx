@@ -4,10 +4,12 @@ import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Analytics />
-      <AppRoutes />
-    </BrowserRouter>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </>
   );
 }
 
