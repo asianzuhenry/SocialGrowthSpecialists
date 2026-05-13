@@ -105,7 +105,7 @@ const Home = () => {
                   {service.pricing.slice(0, 6).map((item, i) => (
                     <div key={i} className="flex justify-between text-xs py-1 border-b border-white/5">
                       <span className="text-white/60">{item.label}</span>
-                      <span className="text-white/80 font-medium">{item.price}/=</span>
+                      <span className="text-white/80 font-medium">{item.price}   AED</span>
                     </div>
                   ))}
                 </div>
