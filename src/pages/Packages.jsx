@@ -59,7 +59,7 @@ const Packages = () => {
             </div>
             <GlowButton
               variant="whatsapp"
-              href="https://wa.me/+97156 673 3648"
+              href="https://wa.me/971566733648"
               target="_blank"
               rel="noopener noreferrer"
             >

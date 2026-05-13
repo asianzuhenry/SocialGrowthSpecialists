@@ -4,7 +4,7 @@ const PackageCard = ({ pkg }) => {
   const { name, subtitle, price, popular, features, color, borderColor } = pkg;
 
   const whatsappMsg = encodeURIComponent(`Hi! I'd like to order the ${name} package (UGX ${price}).`);
-  const whatsappUrl = `https://wa.me/+97156 673 3648?text=${whatsappMsg}`;
+  const whatsappUrl = `https://wa.me/971566733648?text=${whatsappMsg}`;
 
   return (
     <div

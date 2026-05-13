@@ -61,7 +61,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-white/50 text-sm">
                 <span>📱</span>
-                <a href="https://wa.me/+97156 673 3648" className="hover:text-white transition-colors">+97156 673 3648</a>
+                <a href="https://wa.me/971566733648" className="hover:text-white transition-colors">+97156 673 3648</a>
               </li>
               <li className="flex items-center gap-2 text-white/50 text-sm">
                 <span>📧</span>
@@ -89,7 +89,7 @@ const Footer = () => {
             <p className="text-white/50 text-sm">Join thousands of satisfied clients.</p>
           </div>
           <a
-            href="https://wa.me/+97156 673 3648"
+            href="https://wa.me/971566733648"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap"

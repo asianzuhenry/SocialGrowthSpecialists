@@ -4,7 +4,7 @@ const ServiceCard = ({ service, compact = false }) => {
   const { name, description, borderColor, pricing, features, icon } = service;
 
   const whatsappMsg = encodeURIComponent(`Hi! I'm interested in ${name} services.`);
-  const whatsappUrl = `https://wa.me/+97156 673 3648?text=${whatsappMsg}`;
+  const whatsappUrl = `https://wa.me/971566733648?text=${whatsappMsg}`;
 
   if (compact) {
     return (

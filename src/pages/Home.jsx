@@ -48,7 +48,7 @@ const Home = () => {
                 <GlowButton variant="primary" as={Link} href="/packages" className="px-8 py-3">
                   View Packages →
                 </GlowButton>
-                <GlowButton variant="outline" href="https://wa.me/256784318005" target="_blank" rel="noopener noreferrer" className="px-8 py-3">
+                <GlowButton variant="outline" href="https://wa.me/971566733648" target="_blank" rel="noopener noreferrer" className="px-8 py-3">
                   💬 Contact Us
                 </GlowButton>
               </div>
@@ -110,7 +110,7 @@ const Home = () => {
                   ))}
                 </div>
                 <a
-                  href={`https://wa.me/256784318005?text=${encodeURIComponent(`Hi! I'm interested in ${service.name}.`)}`}
+                  href={`https://wa.me/971566733648?text=${encodeURIComponent(`Hi! I'm interested in ${service.name}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary w-full py-2 rounded-full text-xs font-semibold text-white text-center block mt-auto"
@@ -135,12 +135,12 @@ const Home = () => {
             </div>
           </div>
           <a
-            href="https://wa.me/256784318005"
+            href="https://wa.me/971566733648"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap"
           >
-            📱 +256 784 318005
+            📱 +97156 673 3648
           </a>
         </div>
       </section>

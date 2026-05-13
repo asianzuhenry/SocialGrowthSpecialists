@@ -81,7 +81,7 @@ const WhyUs = () => {
             <p className="text-white/50 mb-6 relative z-10">Our team is available 24/7 to assist you.</p>
             <GlowButton
               variant="whatsapp"
-              href="https://wa.me/+97156 673 3648"
+              href="https://wa.me/971566733648"
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-10 px-8 py-3"

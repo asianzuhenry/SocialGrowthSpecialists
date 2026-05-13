@@ -30,7 +30,7 @@ const Services = () => {
               </p>
             </div>
             <div className="flex gap-3 lg:justify-end">
-              <GlowButton variant="whatsapp" href="https://wa.me/+97156 673 3648" target="_blank" rel="noopener noreferrer">
+              <GlowButton variant="whatsapp" href="https://wa.me/971566733648" target="_blank" rel="noopener noreferrer">
                 💬 Chat on WhatsApp
               </GlowButton>
             </div>
@@ -67,7 +67,7 @@ const Services = () => {
               </div>
               <GlowButton
                 variant="whatsapp"
-                href="https://wa.me/+97156 673 3648"
+                href="https://wa.me/971566733648"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full mt-auto"
@@ -86,7 +86,7 @@ const Services = () => {
               <p className="text-white/50 text-sm">Let our experts help you choose the perfect growth strategy.</p>
               <GlowButton
                 variant="whatsapp"
-                href="https://wa.me/+97156 673 3648"
+                href="https://wa.me/971566733648"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"

@@ -12,7 +12,7 @@ const Contact = () => {
     const msg = encodeURIComponent(
       `Hi! My name is ${form.name}.\nEmail: ${form.email}\nService: ${form.service || 'Not specified'}\nMessage: ${form.message}`
     );
-    window.open(`https://wa.me/+97156 673 3648?text=${msg}`, '_blank');
+    window.open(`https://wa.me/971566733648?text=${msg}`, '_blank');
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
@@ -38,7 +38,7 @@ const Contact = () => {
 
               <div className="space-y-4 mb-8">
                 {[
-                  { icon: '📱', label: '+97156 673 3648', href: 'https://wa.me/+97156 673 3648' },
+                  { icon: '📱', label: '+97156 673 3648', href: 'https://wa.me/971566733648' },
                   { icon: '📧', label: 'support@socialgrowth.com', href: 'mailto:support@socialgrowth.com' },
                   { icon: '📍', label: 'Kampala, Uganda', href: null },
                   { icon: '🕐', label: "24/7 – We're Always Here", href: null },
@@ -141,7 +141,7 @@ const Contact = () => {
                 <p className="text-white/60 text-sm mb-3">Or chat with us directly on WhatsApp for faster response</p>
                 <GlowButton
                   variant="whatsapp"
-                  href="https://wa.me/+97156 673 3648"
+                  href="https://wa.me/971566733648"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3"

@@ -65,7 +65,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <GlowButton
               variant="whatsapp"
-              href="https://wa.me/+97156 673 3648"
+              href="https://wa.me/971566733648"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs px-4 py-2"
@@ -109,7 +109,7 @@ const Navbar = () => {
             <div className="pt-2">
               <GlowButton
                 variant="whatsapp"
-                href="https://wa.me/+97156 673 3648"
+                href="https://wa.me/971566733648"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"
