@@ -39,7 +39,7 @@ const ServiceCard = ({ service, compact = false }) => {
         {pricing.map((item, i) => (
           <div key={i} className="flex justify-between items-center py-1.5 border-b border-white/5">
             <span className="text-white/70 text-sm">{item.label}</span>
-            <span className="text-white font-semibold text-sm">UGX {item.price}   AED</span>
+            <span className="text-white font-semibold text-sm">{item.price}   AED</span>
           </div>
         ))}
       </div>

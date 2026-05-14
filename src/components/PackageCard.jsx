@@ -3,7 +3,7 @@ import GlowButton from './GlowButton';
 const PackageCard = ({ pkg }) => {
   const { name, subtitle, price, popular, features, color, borderColor } = pkg;
 
-  const whatsappMsg = encodeURIComponent(`Hi! I'd like to order the ${name} package (UGX ${price}).`);
+  const whatsappMsg = encodeURIComponent(`Hi! I'd like to order the ${name} package (${price}).`);
   const whatsappUrl = `https://wa.me/971566733648?text=${whatsappMsg}`;
 
   return (
@@ -32,8 +32,8 @@ const PackageCard = ({ pkg }) => {
       </div>
 
       <div className="flex items-baseline gap-1">
-        <span className="text-white/40 text-xs">UGX</span>
         <span className="text-3xl font-extrabold text-white font-display">{price}</span>
+        <span className="text-white/40 text-xs">AED </span>
       </div>
 
       <div className="space-y-2.5 flex-1">
