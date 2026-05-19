@@ -3,7 +3,7 @@ export const packages = [
     id: 'basic',
     name: 'Basic',
     subtitle: 'Perfect for getting started',
-    price: '25,000',
+    price: '24',
     popular: false,
     features: [
       '50 Followers',
@@ -19,7 +19,7 @@ export const packages = [
     id: 'standard',
     name: 'Standard',
     subtitle: 'Great for growing faster',
-    price: '50,000',
+    price: '49',
     popular: false,
     features: [
       '100 Followers',
@@ -35,7 +35,7 @@ export const packages = [
     id: 'premium',
     name: 'Premium',
     subtitle: 'Maximum growth & engagement',
-    price: '100,000',
+    price: '97',
     popular: true,
     features: [
       '1K Followers',
@@ -51,7 +51,7 @@ export const packages = [
     id: 'ultimate',
     name: 'Ultimate',
     subtitle: 'For brands & serious influencers',
-    price: '200,000',
+    price: '195',
     popular: false,
     features: [
       '2.5K Followers',
