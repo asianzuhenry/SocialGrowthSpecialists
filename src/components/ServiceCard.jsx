@@ -1,7 +1,7 @@
 import GlowButton from './GlowButton';
 
 const ServiceCard = ({ service, compact = false }) => {
-  const { name, description, borderColor, pricing, features, icon } = service;
+  const { name, description, borderColor, pricing, icon } = service;
 
   const whatsappMsg = encodeURIComponent(`Hi! I'm interested in ${name} services.`);
   const whatsappUrl = `https://wa.me/971566733648?text=${whatsappMsg}`;
@@ -15,7 +15,7 @@ const ServiceCard = ({ service, compact = false }) => {
         <div className="text-2xl">{icon}</div>
         <div className="flex-1">
           <h3 className="font-semibold text-white font-display group-hover:gradient-text transition-all">{name}</h3>
-          <p className="text-white/50 text-xs mt-0.5">{description}</p>
+          <p className="text-white/50 text-sm mt-0.5">{description}</p>
         </div>
         <span className="text-white/30 text-lg">›</span>
       </div>
@@ -31,15 +31,15 @@ const ServiceCard = ({ service, compact = false }) => {
         <span className="text-3xl">{icon}</span>
         <div>
           <h3 className="font-bold text-lg text-white font-display">{name}</h3>
-          <p className="text-white/50 text-xs">{description}</p>
+          <p className="text-white/50 text-sm">{description}</p>
         </div>
       </div>
 
       <div className="space-y-2">
         {pricing.map((item, i) => (
           <div key={i} className="flex justify-between items-center py-1.5 border-b border-white/5">
-            <span className="text-white/70 text-sm">{item.label}</span>
-            <span className="text-white font-semibold text-sm">{item.price}   AED</span>
+            <span className="text-white/70 text-base">{item.label}</span>
+            <span className="text-white font-semibold text-base">{item.price}   AED</span>
           </div>
         ))}
       </div>

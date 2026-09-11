@@ -55,12 +55,12 @@ const Services = () => {
                 <span className="text-3xl">{allInOne.icon}</span>
                 <div>
                   <h3 className="font-bold text-lg text-white font-display">{allInOne.title}</h3>
-                  <p className="text-white/50 text-xs">{allInOne.description}</p>
+                  <p className="text-white/50 text-sm">{allInOne.description}</p>
                 </div>
               </div>
               <div className="space-y-2">
                 {allInOne.features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-white/70">
+                  <div key={i} className="flex items-center gap-2 text-base text-white/70">
                     <span className="text-[#9b30ff]">✓</span> {f}
                   </div>
                 ))}
@@ -83,7 +83,7 @@ const Services = () => {
             >
               <span className="text-4xl">🤔</span>
               <h3 className="font-bold text-lg text-white font-display">Not Sure What You Need?</h3>
-              <p className="text-white/50 text-sm">Let our experts help you choose the perfect growth strategy.</p>
+              <p className="text-white/50 text-base">Let our experts help you choose the perfect growth strategy.</p>
               <GlowButton
                 variant="whatsapp"
                 href="https://wa.me/971566733648"
@@ -108,7 +108,7 @@ const Services = () => {
               { icon: '🔒', label: '100% Safe & Secure' },
               { icon: '🎧', label: '24/7 Support' },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-white/50 text-sm">
+              <div key={i} className="flex items-center gap-2 text-white/60 text-base">
                 <span className="text-lg">{item.icon}</span> {item.label}
               </div>
             ))}

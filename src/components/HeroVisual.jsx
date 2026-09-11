@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react';
-
 /* ─── Brand-accurate SVG icon paths ─── */
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" width="28" height="28">

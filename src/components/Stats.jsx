@@ -12,7 +12,7 @@ const Stats = ({ className = '' }) => {
         <div key={i} className="flex flex-col items-center gap-1 py-4 px-3 rounded-2xl card-border text-center">
           <span className="text-xl mb-1">{stat.icon}</span>
           <span className="text-2xl font-bold font-display gradient-text">{stat.value}</span>
-          <span className="text-white/50 text-xs">{stat.label}</span>
+          <span className="text-white/60 text-sm">{stat.label}</span>
         </div>
       ))}
     </div>

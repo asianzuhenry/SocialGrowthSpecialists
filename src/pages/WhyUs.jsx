@@ -50,10 +50,10 @@ const WhyUs = () => {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-white font-semibold font-display">{f.title}</h3>
+                    <h3 className="text-white text-lg font-semibold font-display">{f.title}</h3>
                     <span className="text-white/30 group-hover:text-white/60 transition-colors">›</span>
                   </div>
-                  <p className="text-white/50 text-sm mt-1 leading-relaxed">{f.description}</p>
+                  <p className="text-white/50 text-base mt-1 leading-relaxed">{f.description}</p>
                 </div>
               </div>
             ))}

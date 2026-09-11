@@ -46,9 +46,9 @@ const Contact = () => {
                   <div key={i} className="flex items-center gap-3 p-3 rounded-xl card-border">
                     <span className="text-xl">{item.icon}</span>
                     {item.href ? (
-                      <a href={item.href} className="text-white/70 hover:text-white text-sm transition-colors">{item.label}</a>
+                      <a href={item.href} className="text-white/70 hover:text-white text-base transition-colors">{item.label}</a>
                     ) : (
-                      <span className="text-white/70 text-sm">{item.label}</span>
+                      <span className="text-white/70 text-base">{item.label}</span>
                     )}
                   </div>
                 ))}
@@ -69,35 +69,35 @@ const Contact = () => {
                 <h2 className="font-display text-xl font-bold text-white mb-5">Send Us a Message</h2>
                 <div className="space-y-4">
                   <div>
-                    <label className="text-white/50 text-xs mb-1 block">Your Name</label>
+                    <label className="text-white/60 text-sm mb-1 block">Your Name</label>
                     <input
                       name="name"
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Enter your name"
-                      className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/30 outline-none focus:border-[#9b30ff] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl text-base text-white placeholder-white/30 outline-none focus:border-[#9b30ff] transition-colors"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
                     />
                   </div>
                   <div>
-                    <label className="text-white/50 text-xs mb-1 block">Email Address</label>
+                    <label className="text-white/60 text-sm mb-1 block">Email Address</label>
                     <input
                       name="email"
                       type="email"
                       value={form.email}
                       onChange={handleChange}
                       placeholder="Enter your email"
-                      className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/30 outline-none focus:border-[#9b30ff] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl text-base text-white placeholder-white/30 outline-none focus:border-[#9b30ff] transition-colors"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
                     />
                   </div>
                   <div>
-                    <label className="text-white/50 text-xs mb-1 block">Service Interested In</label>
+                    <label className="text-white/60 text-sm mb-1 block">Service Interested In</label>
                     <select
                       name="service"
                       value={form.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl text-sm text-white outline-none"
+                      className="w-full px-4 py-3 rounded-xl text-base text-white outline-none"
                       style={{ background: 'rgba(15,15,36,0.95)', border: '1px solid rgba(255,255,255,0.1)' }}
                     >
                       <option value="">Select a service</option>
@@ -111,14 +111,14 @@ const Contact = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="text-white/50 text-xs mb-1 block">Your Message</label>
+                    <label className="text-white/60 text-sm mb-1 block">Your Message</label>
                     <textarea
                       name="message"
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Tell us about your goals..."
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/30 outline-none resize-none"
+                      className="w-full px-4 py-3 rounded-xl text-base text-white placeholder-white/30 outline-none resize-none"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
                     />
                   </div>
@@ -138,7 +138,7 @@ const Contact = () => {
                 className="mt-4 rounded-2xl p-5 text-center"
                 style={{ border: '1px solid rgba(37,211,102,0.2)', background: 'rgba(37,211,102,0.04)' }}
               >
-                <p className="text-white/60 text-sm mb-3">Or chat with us directly on WhatsApp for faster response</p>
+                <p className="text-white/60 text-base mb-3">Or chat with us directly on WhatsApp for faster response</p>
                 <GlowButton
                   variant="whatsapp"
                   href="https://wa.me/971566733648"

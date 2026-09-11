@@ -19,7 +19,7 @@ const PackageCard = ({ pkg }) => {
     >
       {popular && (
         <div
-          className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1 rounded-full text-white"
+          className="absolute -top-3 left-1/2 -translate-x-1/2 text-sm font-bold px-4 py-1 rounded-full text-white"
           style={{ background: 'linear-gradient(90deg, #ff2d78, #9b30ff)' }}
         >
           Most Popular
@@ -28,12 +28,12 @@ const PackageCard = ({ pkg }) => {
 
       <div>
         <h3 className="font-bold text-xl font-display" style={{ color }}>{name}</h3>
-        <p className="text-white/50 text-xs mt-1">{subtitle}</p>
+        <p className="text-white/50 text-sm mt-1">{subtitle}</p>
       </div>
 
       <div className="flex items-baseline gap-1">
         <span className="text-3xl font-extrabold text-white font-display">{price}</span>
-        <span className="text-white/40 text-xs">AED </span>
+        <span className="text-white/40 text-sm">AED </span>
       </div>
 
       <div className="space-y-2.5 flex-1">
@@ -45,7 +45,7 @@ const PackageCard = ({ pkg }) => {
             >
               ✓
             </div>
-            <span className="text-white/75 text-sm">{f}</span>
+            <span className="text-white/75 text-base">{f}</span>
           </div>
         ))}
       </div>

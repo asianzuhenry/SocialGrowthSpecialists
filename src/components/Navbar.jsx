@@ -29,16 +29,16 @@ const Navbar = () => {
         borderBottom: scrolled ? '1px solid rgba(155,48,255,0.15)' : '1px solid transparent',
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="page-container">
+        <div className="flex items-center justify-between h-[4.5rem]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #ff2d78, #9b30ff)' }}>
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-neon-pink" style={{ background: 'linear-gradient(135deg, #ff2d78, #9b30ff)' }}>
               <span className="text-white text-sm font-bold">S</span>
             </div>
-            <span className="font-bold text-sm text-white font-display leading-tight">
+            <span className="font-bold text-sm text-white font-display leading-tight tracking-wide">
               Social Growth<br />
-              <span className="text-white/50 font-normal text-xs">Specialists</span>
+              <span className="text-white/50 font-normal text-sm">Specialists</span>
             </span>
           </Link>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
                 to={to}
                 end={to === '/'}
                 className={({ isActive }) =>
-                  `px-4 py-2 text-sm rounded-lg transition-all duration-200 ${isActive
+                  `px-3.5 py-2 text-sm rounded-lg transition-all duration-200 ${isActive
                     ? 'text-white font-semibold'
                     : 'text-white/60 hover:text-white hover:bg-white/5'
                   }`
@@ -68,7 +68,7 @@ const Navbar = () => {
               href="https://wa.me/971566733648"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs px-4 py-2"
+              className="text-sm px-4 py-2"
             >
               <span>📱</span> +97156 673 3648
             </GlowButton>
@@ -100,7 +100,7 @@ const Navbar = () => {
                 end={to === '/'}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `block px-4 py-3 rounded-lg text-sm transition-all ${isActive ? 'text-white font-semibold bg-white/5' : 'text-white/60 hover:text-white'}`
+                  `block px-4 py-3 rounded-lg text-base transition-all ${isActive ? 'text-white font-semibold bg-white/5' : 'text-white/60 hover:text-white'}`
                 }
               >
                 {label}

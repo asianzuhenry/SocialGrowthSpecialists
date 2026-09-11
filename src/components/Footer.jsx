@@ -13,9 +13,9 @@ const Footer = () => {
               <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #ff2d78, #9b30ff)' }}>
                 <span className="text-white text-sm font-bold">S</span>
               </div>
-              <span className="font-bold text-sm text-white font-display">Social Growth Specialists</span>
+              <span className="font-bold text-base text-white font-display">Social Growth Specialists</span>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed">
+            <p className="text-white/50 text-base leading-relaxed">
               We help individuals, brands, and businesses grow their online presence with real results that matter.
             </p>
             <div className="flex gap-3 mt-4">
@@ -37,7 +37,7 @@ const Footer = () => {
                 { to: '/contact', label: 'Contact Us' },
               ].map(({ to, label }) => (
                 <li key={to}>
-                  <Link to={to} className="text-white/50 text-sm hover:text-white transition-colors">{label}</Link>
+                  <Link to={to} className="text-white/50 text-base hover:text-white transition-colors">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -49,7 +49,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {['Instagram Growth', 'TikTok Growth', 'YouTube Growth', 'Facebook Growth', 'X (Twitter) Growth'].map((s) => (
                 <li key={s}>
-                  <Link to="/services" className="text-white/50 text-sm hover:text-white transition-colors">{s}</Link>
+                  <Link to="/services" className="text-white/50 text-base hover:text-white transition-colors">{s}</Link>
                 </li>
               ))}
             </ul>
@@ -59,19 +59,19 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4 font-display">Contact Us</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-white/50 text-sm">
+              <li className="flex items-center gap-2 text-white/50 text-base">
                 <span>📱</span>
                 <a href="https://wa.me/971566733648" className="hover:text-white transition-colors">+97156 673 3648</a>
               </li>
-              <li className="flex items-center gap-2 text-white/50 text-sm">
+              <li className="flex items-center gap-2 text-white/50 text-base">
                 <span>📧</span>
                 <a href="mailto:support@socialgrowth.com" className="hover:text-white transition-colors">support@socialgrowth.com</a>
               </li>
-              <li className="flex items-center gap-2 text-white/50 text-sm">
+              <li className="flex items-center gap-2 text-white/50 text-base">
                 <span>📍</span>
                 <span>Kampala, Uganda</span>
               </li>
-              <li className="flex items-center gap-2 text-white/50 text-sm">
+              <li className="flex items-center gap-2 text-white/50 text-base">
                 <span>🕐</span>
                 <span>24/7 – We're Always Here</span>
               </li>
@@ -86,23 +86,23 @@ const Footer = () => {
         >
           <div>
             <p className="text-white font-semibold font-display">Ready to Grow Your Social Media?</p>
-            <p className="text-white/50 text-sm">Join thousands of satisfied clients.</p>
+            <p className="text-white/50 text-base">Join thousands of satisfied clients.</p>
           </div>
           <a
             href="https://wa.me/971566733648"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-whatsapp flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white whitespace-nowrap"
+            className="btn-whatsapp flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold text-white whitespace-nowrap"
           >
             <span>💬</span> Chat with Us on WhatsApp
           </a>
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-white/30 text-xs">© {year} Social Growth Specialists. All Rights Reserved.</p>
+          <p className="text-white/40 text-sm">© {year} Social Growth Specialists. All Rights Reserved.</p>
           <div className="flex gap-4">
-            <span className="text-white/30 text-xs hover:text-white/60 cursor-pointer transition-colors">Terms of Service</span>
-            <span className="text-white/30 text-xs hover:text-white/60 cursor-pointer transition-colors">Privacy Policy</span>
+            <span className="text-white/40 text-sm hover:text-white/60 cursor-pointer transition-colors">Terms of Service</span>
+            <span className="text-white/40 text-sm hover:text-white/60 cursor-pointer transition-colors">Privacy Policy</span>
           </div>
         </div>
       </div>
