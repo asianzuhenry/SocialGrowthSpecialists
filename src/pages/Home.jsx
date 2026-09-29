@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import GlowButton from '../components/GlowButton';
-import Stats from '../components/Stats';
-import HeroVisual from '../components/HeroVisual';
+import { ArrowRight, Eye, Heart, MessageCircle, Users } from 'lucide-react';
 import { services, whyUsFeatures } from '../data/services';
 
 const platformIcons = [
@@ -10,6 +8,13 @@ const platformIcons = [
   { icon: '▶️', name: 'YouTube' },
   { icon: '📸', name: 'Instagram' },
   { icon: '𝕏', name: 'X (Twitter)' },
+];
+
+const engagementServices = [
+  { icon: Users, label: 'Followers & subscribers' },
+  { icon: Heart, label: 'Likes' },
+  { icon: Eye, label: 'Views' },
+  { icon: MessageCircle, label: 'Comments' },
 ];
 
 const Home = () => {
@@ -27,13 +32,16 @@ const Home = () => {
         <div className="page-container py-16 sm:py-24 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
             <div className="relative z-10">
-              <p className="section-tag eyebrow-line mb-5">Social Growth Specialists</p>
-              <h1 className="font-display text-[3.25rem] sm:text-6xl lg:text-[5.25rem] font-extrabold leading-[0.98] tracking-[-0.055em] text-white mb-6">
-                We Grow.<br />
-                You <span className="gradient-text-pink">Grow.</span>
+              <p className="section-tag eyebrow-line mb-5">For creators, brands &amp; businesses</p>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[4.5rem] font-extrabold leading-[1.02] tracking-[-0.045em] text-white mb-4">
+                Social media<br className="hidden sm:block" /> engagement services
               </h1>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold leading-tight text-white/80 mb-6">
+                Choose the boost.<br />
+                <span className="gradient-text-pink">Grow your reach.</span>
+              </h2>
               <p className="text-white/60 text-[1.05rem] sm:text-lg mb-8 max-w-lg leading-relaxed">
-                Premium social media growth services designed to boost your followers, engagement, and online presence.
+                Order followers, subscribers, likes, views, and comments for your social media accounts. Choose a platform and service, then place your order.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-9">
@@ -45,39 +53,74 @@ const Home = () => {
               </div>
 
               <div className="flex flex-wrap gap-3 mb-9">
-                <GlowButton variant="primary" as={Link} href="/packages" className="px-7 py-3.5">
-                  View Packages →
-                </GlowButton>
-                <GlowButton variant="outline" href="https://wa.me/971566733648" target="_blank" rel="noopener noreferrer" className="px-8 py-3">
-                  💬 Contact Us
-                </GlowButton>
+                <Link to="/services" className="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white">
+                  Browse services <ArrowRight size={16} />
+                </Link>
+                <Link to="/packages" className="inline-flex items-center gap-2 rounded-full border border-[rgba(155,48,255,0.5)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-[#9b30ff] hover:bg-[rgba(155,48,255,0.1)]">
+                  View packages
+                </Link>
               </div>
 
-              <div className="flex items-center gap-3 border-t border-white/10 pt-5 max-w-sm">
-                <div className="flex -space-x-2">
-                  {['🧑', '👩', '🧔'].map((e, i) => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-sm border-2 border-[#05050f]">{e}</div>
-                  ))}
-                </div>
-                <div>
-                  <p className="text-white text-base font-semibold">Trusted by 10,000+ Clients</p>
-                  <p className="text-white/50 text-sm">Fast Delivery • 100% Safe • Real Results</p>
-                </div>
+              <div className="flex items-center gap-2 text-sm text-white/55">
+                <span className="text-[#ff6fa3]">✓</span>
+                No idea where to start? <a href="https://wa.me/971566733648" target="_blank" rel="noopener noreferrer" className="text-white underline decoration-white/30 underline-offset-4 hover:text-white/80">Ask us on WhatsApp</a>
               </div>
             </div>
 
-            {/* Hero visual */}
-            <div className="relative flex items-center justify-center h-[360px] sm:h-[420px] lg:h-[480px]">
-              <HeroVisual />
+            <div className="relative">
+              <div className="absolute -inset-8 rounded-full bg-[#9b30ff]/10 blur-3xl" />
+              <div className="relative rounded-3xl p-6 sm:p-8 card-border">
+                <p className="section-tag mb-2">What can you order?</p>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">Engagement for the metrics that matter to you.</h2>
+                <div className="grid grid-cols-2 gap-3">
+                  {engagementServices.map(({ icon: Icon, label }) => (
+                    <div key={label} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm font-medium text-white/80">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[rgba(255,45,120,0.12)] text-[#ff6fa3]">
+                        <Icon size={19} />
+                      </span>
+                      {label}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 border-t border-white/10 pt-5">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Available for</p>
+                  <div className="flex flex-wrap gap-2">
+                    {platformIcons.map(({ icon, name }) => (
+                      <span key={name} className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/65">
+                        {icon} {name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <Link to="/services" className="mt-6 flex items-center justify-between rounded-xl bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/[0.08]">
+                  Explore services <ArrowRight size={16} className="text-[#ff6fa3]" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-5 sm:py-8">
+      {/* How to order */}
+      <section className="py-8 sm:py-12">
         <div className="page-container">
-          <Stats />
+          <div className="mb-6 text-center">
+            <p className="section-tag mb-2">Getting started</p>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">Three steps to place your order</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              { number: '01', title: 'Choose a platform', description: 'Pick Instagram, TikTok, YouTube, Facebook, or X.' },
+              { number: '02', title: 'Choose a service', description: 'Select followers, subscribers, likes, views, or comments.' },
+              { number: '03', title: 'Pick a package', description: 'Compare options, then tap Order Now to get started on WhatsApp.' },
+            ].map((step) => (
+              <div key={step.number} className="rounded-2xl p-5 card-border">
+                <span className="font-display text-sm font-bold text-[#ff6fa3]">{step.number}</span>
+                <h3 className="mt-2 font-display text-lg font-semibold text-white">{step.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-white/50">{step.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
