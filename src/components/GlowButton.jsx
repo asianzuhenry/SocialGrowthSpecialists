@@ -11,7 +11,12 @@ const GlowButton = ({ children, variant = 'primary', className = '', onClick, hr
   const classes = `${base} ${variants[variant]} ${className}`;
 
   if (href) {
-    return <a href={href} className={classes} {...props}>{children}</a>;
+    return (
+      <a href={href} className={classes} {...props}>
+        {children}
+        {props.target === '_blank' && <span className="sr-only"> (opens in a new tab)</span>}
+      </a>
+    );
   }
 
   return (

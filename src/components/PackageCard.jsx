@@ -20,7 +20,7 @@ const PackageCard = ({ pkg }) => {
       {popular && (
         <div
           className="absolute -top-3 left-1/2 -translate-x-1/2 text-sm font-bold px-4 py-1 rounded-full text-white"
-          style={{ background: 'linear-gradient(90deg, #ff2d78, #9b30ff)' }}
+          style={{ background: 'linear-gradient(90deg, #c51659, #7620ce)' }}
         >
           Most Popular
         </div>
@@ -36,19 +36,20 @@ const PackageCard = ({ pkg }) => {
         <span className="text-white/40 text-sm">AED </span>
       </div>
 
-      <div className="space-y-2.5 flex-1">
+      <ul className="space-y-2.5 flex-1">
         {features.map((f, i) => (
-          <div key={i} className="flex items-center gap-2.5">
+          <li key={i} className="flex items-center gap-2.5">
             <div
+              aria-hidden="true"
               className="w-4 h-4 rounded-full flex items-center justify-center text-[10px]"
               style={{ background: `${color}22`, border: `1px solid ${color}66` }}
             >
               ✓
             </div>
             <span className="text-white/75 text-base">{f}</span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <GlowButton
         href={whatsappUrl}
@@ -62,7 +63,7 @@ const PackageCard = ({ pkg }) => {
         }
         variant={popular ? 'primary' : undefined}
       >
-        Order Now
+        Order {name} package on WhatsApp
       </GlowButton>
     </div>
   );

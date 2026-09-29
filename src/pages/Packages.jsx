@@ -5,6 +5,7 @@ import { packages } from '../data/packages';
 
 const Packages = () => {
   const [filter, setFilter] = useState('popular');
+  const visiblePackages = filter === 'popular' ? packages.filter((pkg) => pkg.popular) : packages;
 
   return (
     <div className="pt-16">
@@ -15,7 +16,7 @@ const Packages = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
           <p className="section-tag mb-4">Our Packages</p>
-          <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+          <h1 tabIndex="-1" className="scroll-mt-24 font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight">
             Simple Packages.<br />Powerful Results.
           </h1>
           <p className="text-white/50 mt-4 max-w-md mx-auto">
@@ -27,9 +28,10 @@ const Packages = () => {
               <button
                 key={f}
                 onClick={() => setFilter(f)}
+                aria-pressed={filter === f}
                 className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${filter === f ? 'btn-primary text-white' : 'card-border text-white/60 hover:text-white'}`}
               >
-                {f === 'popular' ? '🔥 Popular' : '📊 All Platforms'}
+                {f === 'popular' ? 'Popular packages' : 'All packages'}
               </button>
             ))}
           </div>
@@ -39,8 +41,8 @@ const Packages = () => {
       {/* Package Cards */}
       <section className="pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-            {packages.map((pkg) => (
+          <div aria-live="polite" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+            {visiblePackages.map((pkg) => (
               <PackageCard key={pkg.id} pkg={pkg} />
             ))}
           </div>
@@ -51,7 +53,7 @@ const Packages = () => {
             style={{ background: 'linear-gradient(135deg, rgba(37,211,102,0.06), rgba(18,140,126,0.06))', border: '1px solid rgba(37,211,102,0.2)' }}
           >
             <div className="flex items-center gap-4">
-              <span className="text-4xl">💬</span>
+              <span aria-hidden="true" className="text-4xl">💬</span>
               <div>
                 <p className="text-white font-semibold font-display">Need a Custom Package?</p>
                 <p className="text-white/50 text-sm">We've got you covered.</p>
@@ -80,7 +82,7 @@ const Packages = () => {
               { icon: '🎧', label: '24/7 Support' },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2 text-white/50 text-sm">
-                <span>{item.icon}</span> {item.label}
+                <span aria-hidden="true">{item.icon}</span> {item.label}
               </div>
             ))}
           </div>

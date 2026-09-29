@@ -10,7 +10,7 @@ const Stats = ({ className = '' }) => {
     <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 ${className}`}>
       {statsData.map((stat, i) => (
         <div key={i} className="flex flex-col items-center gap-1 py-4 px-3 rounded-2xl card-border text-center">
-          <span className="text-xl mb-1">{stat.icon}</span>
+          <span aria-hidden="true" className="text-xl mb-1">{stat.icon}</span>
           <span className="text-2xl font-bold font-display gradient-text">{stat.value}</span>
           <span className="text-white/60 text-sm">{stat.label}</span>
         </div>

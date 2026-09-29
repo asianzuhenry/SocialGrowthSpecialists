@@ -19,9 +19,30 @@
   }
   a, button { -webkit-tap-highlight-color: transparent; }
   ::selection { background: rgba(255, 45, 120, 0.35); color: #fff; }
+  :focus-visible {
+    outline: 3px solid #ff9fbd;
+    outline-offset: 3px;
+  }
+  button, input, select, textarea { font: inherit; }
+  input::placeholder, textarea::placeholder { color: #a6a6b3; opacity: 1; }
 }
 
 @layer utilities {
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    transform: translateY(-150%);
+    border-radius: 0.5rem;
+    background: #fff;
+    color: #111;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+  }
+  .skip-link:focus { transform: translateY(0); }
+  [class~="text-white/50"], [class~="text-white/40"] { color: #b3b3c0; }
+  [class~="text-white/30"] { color: #9696a3; }
   .page-container {
     width: min(100% - 2rem, 1120px);
     margin-inline: auto;
@@ -54,7 +75,7 @@
     border: 1px solid rgba(155,48,255,0.3);
   }
   .btn-primary {
-    background: linear-gradient(135deg, #ff2d78, #9b30ff);
+    background: linear-gradient(135deg, #c51659, #7620ce);
     transition: all 0.3s ease;
   }
   .btn-primary:hover {
@@ -62,7 +83,7 @@
     transform: translateY(-1px);
   }
   .btn-whatsapp {
-    background: linear-gradient(135deg, #25D366, #128C7E);
+    background: linear-gradient(135deg, #087a38, #08746b);
     transition: all 0.3s ease;
   }
   .btn-whatsapp:hover {
@@ -71,7 +92,7 @@
   }
   .section-tag {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -89,4 +110,17 @@
     background: currentColor;
     opacity: 0.7;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .card-border, .card-border-pink, .glow-border { border-color: currentColor; }
 }

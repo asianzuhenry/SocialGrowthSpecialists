@@ -7,14 +7,13 @@ const Contact = () => {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = () => {
-    if (!form.name || !form.email) return;
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const msg = encodeURIComponent(
       `Hi! My name is ${form.name}.\nEmail: ${form.email}\nService: ${form.service || 'Not specified'}\nMessage: ${form.message}`
     );
-    window.open(`https://wa.me/971566733648?text=${msg}`, '_blank');
+    window.open(`https://wa.me/971566733648?text=${msg}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
   };
 
   return (
@@ -29,7 +28,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div>
               <p className="section-tag mb-4">Contact Us</p>
-              <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
+              <h1 tabIndex="-1" className="scroll-mt-24 font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
                 Let's Grow<br /><span className="gradient-text-pink">Together</span>
               </h1>
               <p className="text-white/50 mb-8">
@@ -44,7 +43,7 @@ const Contact = () => {
                   { icon: '🕐', label: "24/7 – We're Always Here", href: null },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 rounded-xl card-border">
-                    <span className="text-xl">{item.icon}</span>
+                    <span aria-hidden="true" className="text-xl">{item.icon}</span>
                     {item.href ? (
                       <a href={item.href} className="text-white/70 hover:text-white text-base transition-colors">{item.label}</a>
                     ) : (
@@ -54,51 +53,49 @@ const Contact = () => {
                 ))}
               </div>
 
-              <div className="flex gap-3">
-                {['📸', '🎵', '👤', '▶️', '𝕏'].map((icon, i) => (
-                  <div key={i} className="w-10 h-10 rounded-xl card-border flex items-center justify-center text-lg cursor-pointer hover:scale-110 transition-transform">
-                    {icon}
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Contact Form */}
             <div>
               <div className="rounded-2xl p-6" style={{ border: '1px solid rgba(155,48,255,0.3)', background: 'rgba(10,10,26,0.9)' }}>
                 <h2 className="font-display text-xl font-bold text-white mb-5">Send Us a Message</h2>
-                <div className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="text-white/60 text-sm mb-1 block">Your Name</label>
+                    <label htmlFor="contact-name" className="text-white/60 text-sm mb-1 block">Your Name</label>
                     <input
+                      id="contact-name"
                       name="name"
+                      autoComplete="name"
+                      required
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="Enter your name"
-                      className="w-full px-4 py-3 rounded-xl text-base text-white placeholder-white/30 outline-none focus:border-[#9b30ff] transition-colors"
-                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
+                      className="w-full min-h-11 px-4 py-3 rounded-xl text-base text-white focus:border-[#9b30ff] transition-colors"
+                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.45)' }}
                     />
                   </div>
                   <div>
-                    <label className="text-white/60 text-sm mb-1 block">Email Address</label>
+                    <label htmlFor="contact-email" className="text-white/60 text-sm mb-1 block">Email Address</label>
                     <input
+                      id="contact-email"
                       name="email"
                       type="email"
+                      autoComplete="email"
+                      required
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="Enter your email"
-                      className="w-full px-4 py-3 rounded-xl text-base text-white placeholder-white/30 outline-none focus:border-[#9b30ff] transition-colors"
-                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
+                      className="w-full min-h-11 px-4 py-3 rounded-xl text-base text-white focus:border-[#9b30ff] transition-colors"
+                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.45)' }}
                     />
                   </div>
                   <div>
-                    <label className="text-white/60 text-sm mb-1 block">Service Interested In</label>
+                    <label htmlFor="contact-service" className="text-white/60 text-sm mb-1 block">Service Interested In</label>
                     <select
+                      id="contact-service"
                       name="service"
                       value={form.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl text-base text-white outline-none"
-                      style={{ background: 'rgba(15,15,36,0.95)', border: '1px solid rgba(255,255,255,0.1)' }}
+                      className="w-full min-h-11 px-4 py-3 rounded-xl text-base text-white"
+                      style={{ background: 'rgba(15,15,36,0.95)', border: '1px solid rgba(255,255,255,0.45)' }}
                     >
                       <option value="">Select a service</option>
                       <option value="Instagram Growth">Instagram Growth</option>
@@ -111,26 +108,29 @@ const Contact = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="text-white/60 text-sm mb-1 block">Your Message</label>
+                    <label htmlFor="contact-message" className="text-white/60 text-sm mb-1 block">Your Message</label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="Tell us about your goals..."
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl text-base text-white placeholder-white/30 outline-none resize-none"
-                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
+                      className="w-full px-4 py-3 rounded-xl text-base text-white resize-y"
+                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.45)' }}
                     />
                   </div>
 
                   <GlowButton
                     variant="primary"
-                    onClick={handleSubmit}
                     className="w-full py-3"
+                    type="submit"
                   >
-                    {submitted ? '✅ Sent!' : '📤 Send Message'}
+                    Send message in WhatsApp
                   </GlowButton>
-                </div>
+                  <p aria-live="polite" role="status" className="text-sm text-white/70">
+                    {submitted ? 'Your message is ready in WhatsApp. Send it there to complete your request.' : ''}
+                  </p>
+                </form>
               </div>
 
               {/* WhatsApp Direct */}
@@ -146,7 +146,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="w-full py-3"
                 >
-                  💬 Chat on WhatsApp
+                  <span aria-hidden="true">💬</span> Chat on WhatsApp
                 </GlowButton>
               </div>
             </div>

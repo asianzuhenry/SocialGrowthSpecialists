@@ -22,7 +22,7 @@ const Services = () => {
           <p className="section-tag mb-4">Our Services</p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div>
-              <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+              <h1 tabIndex="-1" className="scroll-mt-24 font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight">
                 Powerful Growth<br />Solutions for <span className="gradient-text-pink">Every Platform</span>
               </h1>
               <p className="text-white/50 mt-4 text-base max-w-md">
@@ -31,7 +31,7 @@ const Services = () => {
             </div>
             <div className="flex gap-3 lg:justify-end">
               <GlowButton variant="whatsapp" href="https://wa.me/971566733648" target="_blank" rel="noopener noreferrer">
-                💬 Chat on WhatsApp
+                <span aria-hidden="true">💬</span> Chat on WhatsApp
               </GlowButton>
             </div>
           </div>
@@ -52,7 +52,7 @@ const Services = () => {
               style={{ border: '1px solid rgba(155,48,255,0.35)', background: 'linear-gradient(135deg, rgba(155,48,255,0.08), rgba(45,120,255,0.08))' }}
             >
               <div className="flex items-center gap-3">
-                <span className="text-3xl">{allInOne.icon}</span>
+                <span aria-hidden="true" className="text-3xl">{allInOne.icon}</span>
                 <div>
                   <h3 className="font-bold text-lg text-white font-display">{allInOne.title}</h3>
                   <p className="text-white/50 text-sm">{allInOne.description}</p>
@@ -61,7 +61,7 @@ const Services = () => {
               <div className="space-y-2">
                 {allInOne.features.map((f, i) => (
                   <div key={i} className="flex items-center gap-2 text-base text-white/70">
-                    <span className="text-[#9b30ff]">✓</span> {f}
+                    <span aria-hidden="true" className="text-[#9b30ff]">✓</span> {f}
                   </div>
                 ))}
               </div>
@@ -81,7 +81,7 @@ const Services = () => {
               className="rounded-2xl p-6 flex flex-col gap-4 items-center justify-center text-center transition-all duration-300 hover:translate-y-[-4px]"
               style={{ border: '1px solid rgba(255,45,120,0.25)', background: 'rgba(10,10,26,0.6)' }}
             >
-              <span className="text-4xl">🤔</span>
+              <span aria-hidden="true" className="text-4xl">🤔</span>
               <h3 className="font-bold text-lg text-white font-display">Not Sure What You Need?</h3>
               <p className="text-white/50 text-base">Let our experts help you choose the perfect growth strategy.</p>
               <GlowButton
@@ -91,7 +91,7 @@ const Services = () => {
                 rel="noopener noreferrer"
                 className="w-full"
               >
-                💬 Chat on WhatsApp
+                <span aria-hidden="true">💬</span> Chat on WhatsApp
               </GlowButton>
             </div>
           </div>
@@ -109,7 +109,7 @@ const Services = () => {
               { icon: '🎧', label: '24/7 Support' },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2 text-white/60 text-base">
-                <span className="text-lg">{item.icon}</span> {item.label}
+                <span aria-hidden="true" className="text-lg">{item.icon}</span> {item.label}
               </div>
             ))}
           </div>

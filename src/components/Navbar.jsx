@@ -20,11 +20,24 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        document.getElementById('menu-toggle')?.focus();
+      }
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
+
   return (
     <nav
+      aria-label="Primary navigation"
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? 'rgba(5,5,15,0.95)' : 'rgba(5,5,15,0.7)',
+        background: 'rgba(5,5,15,0.97)',
         backdropFilter: 'blur(20px)',
         borderBottom: scrolled ? '1px solid rgba(155,48,255,0.15)' : '1px solid transparent',
       }}
@@ -34,7 +47,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-neon-pink" style={{ background: 'linear-gradient(135deg, #ff2d78, #9b30ff)' }}>
-              <span className="text-white text-sm font-bold">S</span>
+              <span aria-hidden="true" className="text-white text-sm font-bold">S</span>
             </div>
             <span className="font-bold text-sm text-white font-display leading-tight tracking-wide">
               Social Growth<br />
@@ -70,28 +83,30 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="text-sm px-4 py-2"
             >
-              <span>📱</span> +97156 673 3648
+              <span aria-hidden="true">📱</span> +97156 673 3648
             </GlowButton>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-white p-2"
+            id="menu-toggle"
+            className="md:hidden flex h-11 w-11 items-center justify-center rounded-lg text-white"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
-            <div className="space-y-1.5">
+            <span aria-hidden="true" className="space-y-1.5">
               <span className={`block w-6 h-0.5 bg-white transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
               <span className={`block w-6 h-0.5 bg-white transition-all ${open ? 'opacity-0' : ''}`} />
               <span className={`block w-6 h-0.5 bg-white transition-all ${open ? '-rotate-45 -translate-y-2' : ''}`} />
-            </div>
+            </span>
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden" style={{ background: 'rgba(5,5,15,0.98)', borderTop: '1px solid rgba(155,48,255,0.15)' }}>
+      <div id="mobile-navigation" className={`md:hidden ${open ? '' : 'hidden'}`} style={{ background: 'rgba(5,5,15,0.98)', borderTop: '1px solid rgba(155,48,255,0.15)' }}>
           <div className="px-4 py-4 space-y-1">
             {navLinks.map(({ to, label }) => (
               <NavLink
@@ -114,12 +129,11 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="w-full"
               >
-                <span>📱</span> +97156 673 3648
+                <span aria-hidden="true">📱</span> +97156 673 3648
               </GlowButton>
             </div>
           </div>
-        </div>
-      )}
+      </div>
     </nav>
   );
 };

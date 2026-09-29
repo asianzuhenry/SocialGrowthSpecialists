@@ -14,7 +14,7 @@ const WhyUs = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="section-tag mb-4">Why Choose Us</p>
-              <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+              <h1 tabIndex="-1" className="scroll-mt-24 font-display text-4xl sm:text-5xl font-extrabold text-white leading-tight">
                 Your Growth,<br /><span className="gradient-text">Our Priority.</span>
               </h1>
               <p className="text-white/50 mt-4 text-base max-w-md">
@@ -25,7 +25,7 @@ const WhyUs = () => {
             <div className="flex justify-center">
               <div className="relative w-64 h-64 flex items-center justify-center">
                 <div className="absolute inset-0 rounded-full opacity-30 blur-2xl animate-pulse" style={{ background: 'radial-gradient(circle, #9b30ff, #ff2d78, transparent)' }} />
-                <span className="text-9xl animate-float relative z-10">🏆</span>
+                <span aria-hidden="true" className="text-9xl animate-float relative z-10">🏆</span>
               </div>
             </div>
           </div>
@@ -39,19 +39,18 @@ const WhyUs = () => {
             {whyUsFeatures.map((f, i) => (
               <div
                 key={i}
-                className="rounded-2xl p-6 flex gap-4 transition-all duration-300 hover:translate-y-[-4px] group cursor-pointer"
+                className="rounded-2xl p-6 flex gap-4 transition-all duration-300 hover:translate-y-[-4px] group"
                 style={{ border: `1px solid ${f.color}33`, background: 'rgba(10,10,26,0.8)' }}
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                   style={{ background: `${f.color}22`, border: `1px solid ${f.color}44` }}
                 >
-                  {f.icon}
+                  <span aria-hidden="true">{f.icon}</span>
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <h3 className="text-white text-lg font-semibold font-display">{f.title}</h3>
-                    <span className="text-white/30 group-hover:text-white/60 transition-colors">›</span>
                   </div>
                   <p className="text-white/50 text-base mt-1 leading-relaxed">{f.description}</p>
                 </div>
